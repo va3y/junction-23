@@ -4,6 +4,9 @@ import path from "node:path";
 
 export default defineConfig(({ command, mode }) => {
     return {
+        build: {
+            target: "esnext",
+        },
         plugins: [
             viteStaticCopy({
                 targets: [
@@ -29,6 +32,7 @@ export default defineConfig(({ command, mode }) => {
                         : "babylonjs",
             },
         },
+
         worker: {
             format: "es",
         },
